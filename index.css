@@ -15,7 +15,7 @@ main {
   padding-block-start: 40px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('wallpaper.jpeg');
   background-size: 101%;
-  background-position: center;
+  background-position: left -12px center;
 }
 
 form {
@@ -24,7 +24,7 @@ form {
   justify-content: center;
   align-items: flex-end;
   padding-block: 90px;
-  font-size: 32px;
+  font-size: 24px;
   color: white;
 }
 
@@ -34,7 +34,7 @@ svg {
 
 fieldset {
   max-inline-size: 250px;
-  block-size: 50px;
+  block-size: 38px;
   flex-grow: 0;
   display: flex;
   padding: 0;
@@ -45,7 +45,7 @@ fieldset {
 
 input {
   inline-size: 450px;
-  block-size: 50px;
+  block-size: 38px;
   margin: 0;
   padding-inline: 8px;
   background-color: transparent;
@@ -66,5 +66,5 @@ label {
 
 input:where(:focus, :valid)~label {
   transform-origin: center bottom;
-  transform: translateY(-50px) scale(0.7);
+  transform: translateY(-38px) scale(0.7);
 }
