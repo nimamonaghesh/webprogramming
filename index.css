@@ -13,9 +13,9 @@ main {
   inline-size: 100vmax;
   block-size: 320px;
   padding-block-start: 40px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('wallpaper.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('wallpaper.jpeg');
   background-size: 101%;
-  background-position: left -15px bottom -270px;
+  background-position: center;
 }
 
 form {
