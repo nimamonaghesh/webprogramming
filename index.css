@@ -1,70 +1,158 @@
 * {
   box-sizing: border-box;
   position: relative;
+  text-decoration: none;
+  color: var(--front-color);
+}
+
+input,
+select,
+textarea {
+  margin: 0;
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  background: transparent;
+  font-family: 'Vazirmatn';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
 }
 
 body {
+  --front-color: #323136;
   direction: rtl;
   margin: 0;
+  scrollbar-width: none;
   font-family: 'Vazirmatn';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
 }
 
-main {
+body::-webkit-scrollbar {
+  display: none;
+}
+
+header {
   inline-size: 100vmax;
-  block-size: 320px;
-  padding-block-start: 40px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('wallpaper.jpeg');
-  background-size: 101%;
-  background-position: left -12px center;
+  block-size: calc(100vmax * 2 / 5);
+  display: flex;
+  flex-wrap: nowrap;
 }
 
-form {
-  block-size: 280px;
+header>img {
+  inline-size: 100vmax;
+  block-size: calc(100vmax * 2 / 5);
+  position: absolute;
+}
+
+header>nav {
+  block-size: calc(100vmax * 2 / 5 / 6);
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+  gap: 2rem;
+  padding-inline: 32px;
+}
+
+header>nav>a:first-of-type {
+  inline-size: 50px;
+  block-size: 50px;
+}
+
+header>nav>a:first-of-type>svg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+header>nav>a:last-of-type::before {
+  font-family: 'uicons-regular-straight';
+  content: "\f577";
+  vertical-align: middle;
+}
+
+header>form {
+  block-size: calc(100vmax * 2 / 5 / 6);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-inline: 32px;
+}
+
+header>form>main {
+  block-size: 50px;
+  display: flex;
+  border-block-end: 1px solid var(--front-color);
+}
+
+header>form>main>div {
+  block-size: 50px;
+  display: flex;
+  align-items: center;
+}
+
+header>form>main>div:not(:last-of-type) {
+  border-inline-end: 1px solid var(--front-color);
+}
+
+header>form>main>div:first-of-type>input {
+  inline-size: 50%;
+}
+
+header>form>main>div:first-of-type>input:first-of-type {
+  padding-inline-start: 30px;
+}
+
+header>form>main>div:first-of-type>input:last-of-type {
+  padding-inline-start: 42px;
+}
+
+header>form>main>div:first-of-type>label {
+  position: absolute;
+  opacity: 0.5;
+}
+
+header>form>main>div:first-of-type>label[for="from"] {
+  right: 8px;
+}
+
+header>form>main>div:first-of-type>label[for="to"] {
+  right: calc(50% + 20px);
+}
+
+header>form>main>div:first-of-type>button {
+  inline-size: 24px;
+  block-size: 24px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  padding-block: 90px;
-  font-size: 24px;
-  color: white;
-}
-
-svg {
-  transform: translateY(77.5px);
-}
-
-fieldset {
-  max-inline-size: 250px;
-  block-size: 38px;
-  flex-grow: 0;
-  display: flex;
-  padding: 0;
-  margin: 0;
-  border: none;
-  border-block-end: 1px solid white;
-}
-
-input {
-  inline-size: 450px;
-  block-size: 38px;
-  margin: 0;
-  padding-inline: 8px;
-  background-color: transparent;
-  border: 0;
-  outline: 0;
-  font-size: inherit;
-  color: inherit;
-}
-
-label {
+  align-items: center;
   position: absolute;
-  right: 0;
-  opacity: 0.7;
-  font-weight: 200;
-  pointer-events: none;
-  transition: 200ms transform ease;
+  left: calc(50% - 12px);
+  top: 13px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--front-color);
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-input:where(:focus, :valid)~label {
-  transform-origin: center bottom;
-  transform: translateY(-38px) scale(0.7);
+header>form>main>div:first-of-type>button::before,
+header>form>main>div:first-of-type>button::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: calc(50% - 0.5px);
+  height: 13px;
+  width: 1px;
+  background-color: var(--front-color);
+}
+
+header>form>main>div:first-of-type>button::before {
+  top: -14px;
+}
+
+header>form>main>div:first-of-type>button::after {
+  bottom: -14px;
 }
